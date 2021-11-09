@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Title } from "../styled/Title.style"
 import { Image } from "../styled/Image.styled"
+import { Button } from "../styled/Button.style"
 
 export default function Cloudinary(){
 
@@ -26,7 +27,11 @@ export default function Cloudinary(){
 
   return (
     <div style={{textAlign: "center"}}>
-      <Title>Hey, let's upload an image!</Title>
+      <Title>Hey, how cool is it if you user can upload an image directly?</Title>
+      <a rel="noreferrer" target="_blank" href="https://github.com/karlaevelize/leaflet-cloudinary/blob/master/src/pages/Cloudinary.js">
+        <Button primary>Go to source code ➚</Button>
+      </a>
+      <br/>
       <input type="file" onChange={uploadImage}/>
       <div>
         <Image src={image ? image : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"}/>
