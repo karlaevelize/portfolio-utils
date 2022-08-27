@@ -4,6 +4,8 @@ import Cloudinary from './pages/Cloudinary';
 import Leaflet from './pages/Leaflet';
 import Homepage from './pages/Homepage';
 import Navigation from './components/Navigation';
+import PayPal from "./pages/PayPal";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route exact path="/" component={Homepage}/>
         <Route path="/cloudinary" component={Cloudinary} />
         <Route path="/leaflet" component={Leaflet}/>
+        <Route path="/paypal" component={PayPal}/>
+        <Route path="/chat" component={Chat}/>
       </Switch>
     </Container>
   );

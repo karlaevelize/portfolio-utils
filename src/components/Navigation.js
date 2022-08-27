@@ -1,13 +1,20 @@
 import styled from "styled-components"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Navigation(){ 
 
   const [ open, setOpen ] = useState(false)
+  const [ items, setItems ] = useState([
+    { path: "/chat", title: "Chat" },
+    { path: "/cloudinary", title: "Cloudinary" },
+    { path: "/leaflet", title: "Leaflet" },
+    { path: "/paypal", title: "PayPal" }
+  ])
 
   return(
     <Nav>
-      <Logo href="/">
+      <Logo to="/">
         Portfolio<span>utils</span>
       </Logo>
       <Hamburger onClick={() => setOpen(!open)}>
@@ -16,15 +23,13 @@ export default function Navigation(){
         <span/>
       </Hamburger>
       <Menu open={open}>
-        <MenuLink href="/cloudinary">Cloudinary</MenuLink>
-        <MenuLink href="/leaflet">Leaflet</MenuLink>
-        <MenuLink href="/styled">Styled Components</MenuLink>
+        {items.map(item => <MenuLink key={item.path}onClick={() => setOpen(!open)} to={item.path}>{item.title}</MenuLink>)}
       </Menu>
     </Nav>
   )
 }
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   padding: 1rem 2rem;
   cursor: pointer;
   text-align: center;
@@ -51,7 +56,7 @@ const Nav = styled.div`
   right: 0;
 `
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   padding: 1rem 0;
   color: #2F2FA2;
   text-decoration: none;
