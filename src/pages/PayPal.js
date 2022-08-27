@@ -1,6 +1,4 @@
 import { PayPalButton } from "react-paypal-button-v2";
-import { useState } from "react"
-import { Button } from "../styled/Button.style"
 
 export default function PayPal(){
 
