@@ -1,16 +1,11 @@
 import styled from "styled-components"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { navbarItems } from "../data/data"
 
 export default function Navigation(){ 
 
   const [ open, setOpen ] = useState(false)
-  const [ items, setItems ] = useState([
-    { path: "/chat", title: "Chat" },
-    { path: "/cloudinary", title: "Cloudinary" },
-    { path: "/leaflet", title: "Leaflet" },
-    { path: "/paypal", title: "PayPal" }
-  ])
 
   return(
     <Nav>
@@ -23,7 +18,7 @@ export default function Navigation(){
         <span/>
       </Hamburger>
       <Menu open={open}>
-        {items.map(item => <MenuLink key={item.path}onClick={() => setOpen(!open)} to={item.path}>{item.title}</MenuLink>)}
+        {navbarItems.map(item => <MenuLink key={item.path}onClick={() => setOpen(!open)} to={item.path}>{item.title}</MenuLink>)}
       </Menu>
     </Nav>
   )

@@ -1,3 +1,10 @@
+export const navbarItems = [
+  { path: "/chat", title: "Chat", description: "real time chat built with React and Firebase" },
+  { path: "/cloudinary", title: "Cloudinary", description: "with Cloudinary you allow your users to upload images directly" },
+  { path: "/leaflet", title: "Leaflet", description: "map integration, a bit like Google Maps" },
+  { path: "/paypal", title: "PayPal", description: "add real payment to your projects" }
+]
+
 export const amsterdamMuseums = [
   { 
     name: "Nemo", 
