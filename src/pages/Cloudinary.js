@@ -6,7 +6,13 @@ import { Button } from "../styled/Button.style"
 export default function Cloudinary(){
 
   const [image, setImage] = useState()
-  
+
+  //CHECK THIS VIDEO FOR SET UP: https://www.youtube.com/watch?v=Y-VgaRwWS3o
+
+  //1. You need to create an account on Cloudinary
+  //2. You to replace "lpsty2kc" on line 21 with your own folder name
+  //3. Also change line 24 to your own link
+
   const uploadImage = async(e) => {
     const files = e.target.files
     const data = new FormData()
@@ -26,7 +32,7 @@ export default function Cloudinary(){
   }
 
   return (
-    <div style={{textAlign: "center"}}>
+    <div style={{ textAlign: "center" }}>
       <Title>Hey, how cool is it if you user can upload an image directly?</Title>
       <a rel="noreferrer" target="_blank" href="https://github.com/karlaevelize/leaflet-cloudinary/blob/master/src/pages/Cloudinary.js">
         <Button primary>Go to source code ➚</Button>
